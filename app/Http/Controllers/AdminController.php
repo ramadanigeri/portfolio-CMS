@@ -75,15 +75,15 @@ class AdminController extends Controller
         ]);
 
         $hashedPassword = Auth::user()->password;
-        if(Hash::check($request->oldpassword, $hashedPassword)){
+        if (Hash::check($request->oldpassword, $hashedPassword)) {
             $users = User::find(Auth::id());
-            $users->password = bcrypt($request->newpassord);
+            $users->password = bcrypt($request->newpassword);
             $users->save();
 
             session()->flash('message','Password Updated Successfully');
             return redirect()->back();
-        } else {
-            session()->flash('message','Old Password does not match');
+        } else{
+            session()->flash('message','Old password is not match');
             return redirect()->back();
         }
     }
