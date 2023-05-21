@@ -19,9 +19,6 @@
     </div>
     </div>
     </div>
-    <div class="scroll__down">
-    <a href="#aboutSection" class="scroll__link">Scroll down</a>
-    </div>
     <div class="banner__video">
     <a href="{{ $homeslide->video_url }}" class="popup-video"><i class="fas fa-play"></i></a>
 </section>
