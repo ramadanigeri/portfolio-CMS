@@ -1515,7 +1515,6 @@ label {
     .menu__area .mobile__nav__toggler {
       display: block; } }
   .menu__area.transparent-header {
-    position: absolute;
     left: 0;
     top: 0;
     width: 100%;
@@ -1557,12 +1556,12 @@ label {
 
 .navbar__wrap {
   display: flex;
-  flex-grow: 1; }
+  flex-grow: 1;
+  justify-content: center; }
   .navbar__wrap ul {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    margin: 0 auto 0 160px; }
+    flex-wrap: wrap; }
     @media (max-width: 1500px) {
       .navbar__wrap ul {
         margin: 0 auto; } }
@@ -3192,7 +3191,7 @@ Breadcrumb
     position: absolute;
     width: 438px;
     height: 438px;
-    background: rgba(0, 84, 255, 0.95);
+    background: rgba(204, 206, 211, 0.95);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -4633,8 +4632,7 @@ Breadcrumb
   padding: 80px 80px 60px 70px;
   border: 2px solid #F7F7F7;
   position: relative;
-  z-index: 1;
-  margin: -238px 0 -210px; }
+  z-index: 1; }
   @media (max-width: 1199.98px) {
     .homeContact__wrap {
       padding: 70px 50px 60px 50px; } }
@@ -4859,10 +4857,10 @@ Breadcrumb
 =============================*/
 .footer {
   background: #191B1E;
-  padding: 310px 0 95px; }
+  padding: 5%; }
   @media (max-width: 767.98px) {
     .footer {
-      padding: 310px 0 20px; } }
+      padding: 5%; } }
   .footer__widget {
     margin-bottom: 50px; }
     .footer__widget .fw-title {

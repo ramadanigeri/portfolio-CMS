@@ -23,7 +23,7 @@
                 <li class="menu-title">Menu</li>
 
                 <li>
-                    <a href="index.html" class="waves-effect">
+                    <a href="{{url('/dashboard')}}" class="waves-effect">
                         <i class="ri-dashboard-line"></i><span class="badge rounded-pill bg-success float-end">3</span>
                         <span>Dashboard</span>
                     </a>
@@ -63,7 +63,7 @@
                     </ul>
                 </li>
 
-                <li class="menu-title">Pages</li>
+                {{-- <li class="menu-title">Pages</li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -91,7 +91,7 @@
                         <li><a href="pages-404.html">Error 404</a></li>
                         <li><a href="pages-500.html">Error 500</a></li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
         </div>
         <!-- Sidebar -->
