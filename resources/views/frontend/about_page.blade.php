@@ -1,6 +1,9 @@
 @extends('frontend.main_master')
 @section('main')
 
+@section('title')
+About | Geri Ramadani Portfolio
+@endsection
 
 <!-- main-area -->
 <main>

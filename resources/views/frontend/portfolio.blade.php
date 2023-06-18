@@ -1,6 +1,9 @@
 @extends('frontend.main_master')
 @section('main')
 
+@section('title')
+PortFolio | Geri Ramadani Portfolio
+@endsection
   <main>
 
             <!-- breadcrumb-area -->
