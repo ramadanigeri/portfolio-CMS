@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Demo\DemoController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
@@ -20,8 +21,14 @@ use App\Http\Controllers\Home\ContactController;
 */
 
 
-Route::get('/', function () {
-    return view('frontend.index');
+// Route::get('/', function () {
+//     return view('frontend.index');
+// });
+
+Route::controller(DemoController::class)->group(function () {
+    Route::get('/', 'HomeMain')->name('home');
+    Route::get('/about', 'Index')->name('about.page')->middleware('check');
+    Route::get('/contact', 'ContactMethod')->name('cotact.page');
 });
 
 //Admin All Route
@@ -52,7 +59,7 @@ Route::controller(AboutController::class)->group(function () {
     Route::get('/delete/multi/image/{id}', 'DeleteMultiImage')->name('delete.multi.image');
 });
 
- // Porfolio All Route 
+ // Portfolio All Route 
  Route::controller(PortfolioController::class)->group(function () {
     Route::get('/all/portfolio', 'AllPortfolio')->name('all.portfolio');
     Route::get('/add/portfolio', 'AddPortfolio')->name('add.portfolio');

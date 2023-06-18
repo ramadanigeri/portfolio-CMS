@@ -1,3 +1,7 @@
+@php
+$route = Route::current()->getName();
+@endphp
+
 <!-- header-area -->
 <header>
     <div id="sticky-header" class="menu__area transparent-header">
@@ -13,15 +17,15 @@
                             </div>
                             <div class="navbar__wrap main__menu d-none d-xl-flex">
                                 <ul class="navigation">
-                                    <li><a href="{{url('/')}}">Home</a></li>
-                                    <li><a href="{{route('home.about')}}">About</a></li>
+                                    <li class="{{ ($route == 'home')? 'active' : '' }}"><a href="{{ route('home') }}">Home</a></li>
+                                    <li class="{{ ($route == 'home.about')? 'active' : '' }}"><a href="{{ route('home.about') }}">About</a></li>
                                     {{-- <li><a href="services-details.html">Services</a></li> --}}
-                                    <li class="menu-item-has-children"><a href="{{route('home.portfolio')}}">Portfolio</a></li>
+                                    <li class="{{ ($route == 'home.portfolio') ? 'active' : '' }}"><a href="{{ route('home.portfolio') }}">Portfolio</a>
                                     {{-- <li class="menu-item-has-children"><a href="#">Our Blog</a> --}}
                                 </ul>
                             </div>
                             <div class="header__btn d-none d-md-block">
-                                <a href="{{ route('contact.me') }}" class="btn">Contact me</a>
+                                <li class="{{ ($route == 'contact.me') ? 'active' : '' }}"><a class="btn" href="{{ route('contact.me') }}">contact me</a></li>
                             </div>
                         </nav>
                     </div>
