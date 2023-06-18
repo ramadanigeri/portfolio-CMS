@@ -28,7 +28,6 @@ use App\Http\Controllers\Home\ContactController;
 Route::controller(DemoController::class)->group(function () {
     Route::get('/', 'HomeMain')->name('home');
     Route::get('/about', 'Index')->name('about.page')->middleware('check');
-    Route::get('/contact', 'ContactMethod')->name('cotact.page');
 });
 
 //Admin All Route
@@ -43,12 +42,15 @@ Route::controller(AdminController::class)->group(function () {
     });
 });
 //Home Slide All Route
+Route::controller(AdminController::class)->group(function () {
 Route::controller(HomeSliderController::class)->group(function () {
     Route::get('/home/slide', 'HomeSlider')->name('home.slide');
     Route::post('/update/slider', 'UpdateSlider')->name('update.slider');
+    });
 });
 
 //Home Slide All Route
+Route::controller(AdminController::class)->group(function () {
 Route::controller(AboutController::class)->group(function () {
     Route::get('/about/page', 'AboutPage')->name('about.page');
     Route::post('/update/about', 'UpdateAbout')->name('update.about');
@@ -59,9 +61,10 @@ Route::controller(AboutController::class)->group(function () {
     Route::get('/edit/multi/image/{id}', 'EditMultiImage')->name('edit.multi.image');
     Route::post('/update/multi/image', 'UpdateMultiImage')->name('update.multi.image');
     Route::get('/delete/multi/image/{id}', 'DeleteMultiImage')->name('delete.multi.image');
+    });
 });
-
  // Portfolio All Route 
+ Route::controller(AdminController::class)->group(function () {
  Route::controller(PortfolioController::class)->group(function () {
     Route::get('/all/portfolio', 'AllPortfolio')->name('all.portfolio');
     Route::get('/add/portfolio', 'AddPortfolio')->name('add.portfolio');
@@ -71,21 +74,26 @@ Route::controller(AboutController::class)->group(function () {
     Route::get('/delete/portfolio/{id}', 'DeletePortfolio')->name('delete.portfolio');
     Route::get('/portfolio/details/{id}', 'PortfolioDetails')->name('portfolio.details');
     Route::get('/portfolio', 'HomePortfolio')->name('home.portfolio');
+    });
 });
 
  // Footer All Route 
+ Route::controller(AdminController::class)->group(function () {
  Route::controller(FooterController::class)->group(function () {
     Route::get('/footer/setup', 'FooterSetup')->name('footer.setup');
     Route::post('/update/footer', 'UpdateFooter')->name('update.footer');
+    });
 });
 
  // Contact All Route 
+ Route::controller(AdminController::class)->group(function () {
  Route::controller(ContactController::class)->group(function () {
     Route::get('/contact', 'Contact')->name('contact.me');
     Route::post('/store/message', 'StoreMessage')->name('store.message');
     Route::post('/store/message', 'StoreMessage')->name('store.message');
     Route::get('/contact/message', 'ContactMessage')->name('contact.message');   
     Route::get('/delete/message/{id}', 'DeleteMessage')->name('delete.message');  
+    });
  });
 
 Route::get('/dashboard', function () {
