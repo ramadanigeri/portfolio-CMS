@@ -7,6 +7,20 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Application Setup
+
+#### Run git clone
+#### Run composer install
+#### Open phpMyAdmin and import database file website.sql from "/DB_Backup_File" folder
+#### Run cp .env.example .env
+- Update the DB_USERNAME to **website** (name of the database that we imported before)
+- Delete the value from DB_PASSWORD and leave blank
+#### Run php artisan key:generate
+#### Run php artisan migrate
+#### Run php artisan serve
+#### Go to link localhost:8000
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
